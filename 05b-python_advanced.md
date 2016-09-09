@@ -19,22 +19,53 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
->> REPLACE THIS WITH YOUR RESPONSE
+import csv
 
+faculty = csv.reader(open('faculty.csv', 'r'))
+next(faculty)
+faculty = list(faculty)
+frequencies = {}
+for row in faculty:
+    new = row[1].replace(".","")
+    new_row = new.split()
+    for i in new_row:
+        if i in frequencies:
+            frequencies[i] +=1
+        else:
+            frequencies[i] = 1
+
+print frequencies
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
->> REPLACE THIS WITH YOUR RESPONSE
+import csv
 
+faculty = csv.reader(open('faculty.csv', 'r'))
+next(faculty)
+faculty = list(faculty)
+frequencies = {}
+for row in faculty:
+    if row[2] in frequencies:
+        frequencies[row[2]] +=1
+    else:
+        frequencies[row[2]] = 1
+
+print frequencies
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
 
->> REPLACE THIS WITH YOUR RESPONSE
+import csv
 
+faculty = csv.reader(open('faculty.csv', 'r'))
+next(faculty)
+faculty = list(faculty)
+emails = [row[3] for row in faculty]
+
+print emails
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
->> REPLACE THIS WITH YOUR RESPONSE
+Code in advanced_python_regex.py
 
 Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
@@ -66,7 +97,7 @@ faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['P
 ```
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+{'Putt': [' PhD ScD', 'Professor of Biostatistics', 'mputt@mail.med.upenn.edu'], 'Feng': [' Ph.D', 'Assistant Professor of Biostatistics', 'ruifeng@upenn.edu'], 'Bilker': ['Ph.D.', 'Professor of Biostatistics', 'warren@upenn.edu']}
 
 ####Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
 
@@ -74,9 +105,7 @@ Print the first 3 key and value pairs of the dictionary:
 professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ('Jonas', 'Ellenberg'): ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu'], ('Yimei', 'Li'): ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'], ('Mingyao','Li'): ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'], ('Hongzhe','Li'): ['Ph.D.', 'Professor', 'hongzhe@upenn.edu'] }
 ```
 
-Print the first 3 key and value pairs of the dictionary:
-
->> REPLACE THIS WITH YOUR RESPONSE
+{('Hongzhe', 'Li'): [' Ph.D', 'Professor', 'hongzhe@upenn.edu'], ('Justine', 'Shults'): [' Ph.D.', 'Professor', 'jshults@mail.med.upenn.edu'], ('Yimei', 'Li'): [' Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu']}
 
 ####Q8.  It looks like the current dictionary is printing by first name.  Print out the dictionary key value pairs based on alphabetical orders of the last name of the professors
 
