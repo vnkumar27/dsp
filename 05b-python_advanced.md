@@ -19,49 +19,49 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
-import csv
+import csv  
 
-faculty = csv.reader(open('faculty.csv', 'r'))
-next(faculty)
-faculty = list(faculty)
-frequencies = {}
-for row in faculty:
-    new = row[1].replace(".","")
-    new_row = new.split()
-    for i in new_row:
-        if i in frequencies:
-            frequencies[i] +=1
-        else:
-            frequencies[i] = 1
+faculty = csv.reader(open('faculty.csv', 'r'))  
+next(faculty)  
+faculty = list(faculty)  
+frequencies = {}  
+for row in faculty:  
+    new = row[1].replace(".","")  
+    new_row = new.split()  
+    for i in new_row:  
+        if i in frequencies:  
+            frequencies[i] +=1  
+        else:  
+            frequencies[i] = 1  
 
-print frequencies
+print frequencies  
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
-import csv
+import csv  
 
-faculty = csv.reader(open('faculty.csv', 'r'))
-next(faculty)
-faculty = list(faculty)
-frequencies = {}
-for row in faculty:
-    if row[2] in frequencies:
-        frequencies[row[2]] +=1
-    else:
-        frequencies[row[2]] = 1
+faculty = csv.reader(open('faculty.csv', 'r'))  
+next(faculty)  
+faculty = list(faculty)  
+frequencies = {}  
+for row in faculty:  
+    if row[2] in frequencies:  
+        frequencies[row[2]] +=1  
+    else:  
+        frequencies[row[2]] = 1  
 
-print frequencies
+print frequencies  
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
 
-import csv
+import csv  
 
-faculty = csv.reader(open('faculty.csv', 'r'))
-next(faculty)
-faculty = list(faculty)
-emails = [row[3] for row in faculty]
+faculty = csv.reader(open('faculty.csv', 'r'))  
+next(faculty)  
+faculty = list(faculty)  
+emails = [row[3] for row in faculty]  
 
-print emails
+print emails  
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
