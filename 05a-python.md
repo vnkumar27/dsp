@@ -54,10 +54,10 @@ Explain list comprehensions. Give examples and show equivalents with `map` and `
 
 **Examples:**  
 numbers = [1, 4, 7, 9, 11, 12, 18]  
-squared = [n **2 for n in numbers if n%2==0] #returns a list of the squares from the list 'numbers' if the number is even.  
+squared = [n ** 2 for n in numbers if n%2==0] #returns a list of the squares from the list 'numbers' if the number is even. 
 even = filter(lambda n: n%2==0, numbers) #returns the even numbers from the list 'numbers'.   
-squared_all = map(lambda n: n **2, numbers) #returns the square of every number in the list 'numbers'.  
-both = map(lambda n: n **2, filter(lambda n: n%2 == 0,numbers))  
+squared_all = map(lambda n: n ** 2, numbers) #returns the square of every number in the list 'numbers'.  
+both = map(lambda n: n ** 2, filter(lambda n: n%2 == 0,numbers))  
 
 **Set comprehension:**  
 numbers_sq = {n**2 for n in range(14)}  
